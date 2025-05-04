@@ -1,0 +1,433 @@
+## 3. System Features
+
+### 3.1 User Authentication
+
+#### 3.1.1 Description and Priority
+The User Authentication feature allows users to register for an account, log in to the system, recover forgotten passwords, and manage their authentication settings. This feature has a **High** priority as it's fundamental to personalized shopping experiences and order management.
+
+#### 3.1.2 Stimulus/Response Sequences
+- **Registration**:
+  - User selects "Create Account" option
+  - System displays registration form
+  - User enters required information
+  - System validates information
+  - System creates user account and sends verification email
+  - User verifies email
+  - System confirms verification and enables account
+
+- **Login**:
+  - User selects "Login" option
+  - System displays login form
+  - User enters credentials
+  - System validates credentials
+  - System grants access and redirects to appropriate page
+
+- **Password Recovery**:
+  - User selects "Forgot Password" option
+  - System displays email form
+  - User enters email
+  - System sends password reset link
+  - User clicks link and sets new password
+  - System confirms and enables login with new password
+
+#### 3.1.3 Functional Requirements
+
+**REQ-1.1**: The system shall allow new users to create an account with email and password.
+
+**REQ-1.2**: The system shall validate user information during registration, including email format, password strength, and required fields.
+
+**REQ-1.3**: The system shall send a verification email to confirm user email addresses.
+
+**REQ-1.4**: The system shall allow users to log in using email/password or social media authentication.
+
+**REQ-1.5**: The system shall implement password recovery through email.
+
+**REQ-1.6**: The system shall implement multi-factor authentication as an optional security feature.
+
+**REQ-1.7**: The system shall detect and prevent automated account creation attempts.
+
+**REQ-1.8**: The system shall provide session management with configurable timeouts.
+
+**REQ-1.9**: The system shall log authentication attempts for security monitoring.
+
+**REQ-1.10**: The system shall implement account lockout after multiple failed login attempts.
+
+### 3.2 Product Browsing and Search
+
+#### 3.2.1 Description and Priority
+This feature allows users to browse products by categories, search for specific items, and filter results based on various attributes. This feature has a **High** priority as it's essential for product discovery and shopping experience.
+
+#### 3.2.2 Stimulus/Response Sequences
+- **Browsing Categories**:
+  - User selects a product category
+  - System displays products in the selected category
+  - User scrolls through products
+  - System loads additional products with infinite scrolling
+
+- **Search**:
+  - User enters search terms in search box
+  - System displays matching products
+  - User refines search using filters
+  - System updates results based on filters
+
+- **Filtering**:
+  - User selects filter options (size, color, price range)
+  - System updates displayed products to match filters
+  - User selects sorting option
+  - System reorders products according to selected sort criteria
+
+#### 3.2.3 Functional Requirements
+
+**REQ-2.1**: The system shall organize products in hierarchical categories with subcategories.
+
+**REQ-2.2**: The system shall provide a search function that matches product names, descriptions, and attributes.
+
+**REQ-2.3**: The system shall support autocomplete in the search function to suggest products as the user types.
+
+**REQ-2.4**: The system shall allow filtering of products by attributes including size, color, price range, brand, and availability.
+
+**REQ-2.5**: The system shall allow sorting of products by price, popularity, ratings, and newest arrivals.
+
+**REQ-2.6**: The system shall implement pagination or infinite scrolling for product listings.
+
+**REQ-2.7**: The system shall display product thumbnails, names, prices, and availability status in listing views.
+
+**REQ-2.8**: The system shall suggest related products based on the current product being viewed.
+
+**REQ-2.9**: The system shall save and display recently viewed products for each user.
+
+**REQ-2.10**: The system shall allow users to compare selected products side by side.
+
+### 3.3 Shopping Cart Management
+
+#### 3.3.1 Description and Priority
+This feature allows users to add products to a shopping cart, modify quantities, remove items, and proceed to checkout.
+priority: high
+
+#### 3.3.2 Stimulus/Response Sequences
+- **Adding Product to Cart**:
+  - User views product details
+  - User selects product attributes (size, color)
+  - User clicks "Add to Cart" button
+  - System adds product to cart and displays confirmation
+  - System updates cart count indicator
+
+- **Modifying Cart**:
+  - User navigates to cart view
+  - User updates product quantities or removes items
+  - System recalculates totals
+  - System updates cart display
+
+- **Proceeding to Checkout**:
+  - User reviews cart contents
+  - User selects "Proceed to Checkout"
+  - System redirects to checkout process
+
+#### 3.3.3 Functional Requirements
+
+**REQ-3.1**: The system shall allow users to add products to a shopping cart with selected attributes (size, color).
+
+**REQ-3.2**: The system shall maintain shopping carts for both logged-in and guest users.
+
+**REQ-3.3**: The system shall preserve cart contents for logged-in users across sessions.
+
+**REQ-3.4**: The system shall merge anonymous cart with user account cart upon login.
+
+**REQ-3.5**: The system shall allow users to modify product quantities in the cart.
+
+**REQ-3.6**: The system shall allow users to remove items from the cart.
+
+**REQ-3.7**: The system shall calculate and display subtotals, taxes, shipping costs, and total prices.
+
+**REQ-3.8**: The system shall check product availability before allowing checkout.
+
+**REQ-3.9**: The system shall apply discount codes or coupons to the cart total.
+
+**REQ-3.10**: The system shall provide a mini-cart view accessible from any page.
+
+### 3.4 Checkout and Payment Processing
+
+#### 3.4.1 Description and Priority
+This feature enables users to complete purchases by entering shipping information, selecting payment methods, and confirming orders. This feature has a **High** priority as it directly impacts revenue generation.
+
+#### 3.4.2 Stimulus/Response Sequences
+- **Shipping Information**:
+  - User proceeds to checkout
+  - System prompts for shipping address
+  - User enters address details
+  - System validates address
+  - System calculates shipping options and costs
+
+- **Payment Method Selection**:
+  - User views available payment methods
+  - User selects preferred method
+  - System redirects to appropriate payment form
+  - User enters payment details
+  - System validates payment information
+
+- **Order Confirmation**:
+  - User reviews order summary
+  - User confirms purchase
+  - System processes payment
+  - System displays confirmation and order number
+  - System sends confirmation email
+
+#### 3.4.3 Functional Requirements
+
+**REQ-4.1**: The system shall provide a multi-step checkout process with progress indicators.
+
+**REQ-4.2**: The system shall allow users to enter and save multiple shipping addresses.
+
+**REQ-4.3**: The system shall validate shipping address formats.
+
+**REQ-4.4**: The system shall calculate shipping costs based on delivery address, shipping method, and order weight/size.
+
+**REQ-4.5**: The system shall support multiple payment methods including credit cards, PayPal, and Apple Pay.
+
+**REQ-4.6**: The system shall ensure PCI compliance for payment processing.
+
+**REQ-4.7**: The system shall display order summary with line items, subtotal, taxes, shipping, and total.
+
+**REQ-4.8**: The system shall process payments securely through payment gateways.
+
+**REQ-4.9**: The system shall generate order confirmations with unique order numbers.
+
+**REQ-4.10**: The system shall send order confirmation emails with tracking information when available.
+
+### 3.5 User Profile Management
+
+#### 3.5.1 Description and Priority
+This feature allows users to view and update their personal information, manage addresses, and track order history. This feature has a **Medium** priority as it enhances the user experience but is not critical for core shopping functionality.
+
+#### 3.5.2 Stimulus/Response Sequences
+- **Profile Editing**:
+  - User navigates to profile section
+  - System displays current profile information
+  - User updates information
+  - System validates changes
+  - System saves updated profile
+
+- **Address Management**:
+  - User selects address management
+  - System displays saved addresses
+  - User adds, edits, or removes addresses
+  - System validates and saves changes
+
+- **Viewing Order History**:
+  - User selects order history
+  - System displays list of past orders
+  - User selects specific order
+  - System displays detailed order information
+
+#### 3.5.3 Functional Requirements
+
+**REQ-5.1**: The system shall provide a user profile section accessible after login.
+
+**REQ-5.2**: The system shall allow users to update personal information including name, email, and phone number.
+
+**REQ-5.3**: The system shall allow users to change their password with appropriate validation.
+
+**REQ-5.4**: The system shall allow users to manage multiple shipping and billing addresses.
+
+**REQ-5.5**: The system shall display order history with filtering and sorting options.
+
+**REQ-5.6**: The system shall allow users to view detailed information for each order.
+
+**REQ-5.7**: The system shall allow users to manage communication preferences.
+
+**REQ-5.8**: The system shall allow users to manage payment methods securely.
+
+**REQ-5.9**: The system shall allow users to delete their account and associated data.
+
+**REQ-5.10**: The system shall allow users to download their personal data in compliance with data protection regulations.
+
+### 3.6 Order Management and Tracking
+
+#### 3.6.1 Description and Priority
+This feature enables users to view order status, track shipments, and manage returns or exchanges. For administrators, it provides tools to process and fulfill orders. This feature has a **High** priority as it's essential for post-purchase customer satisfaction.
+
+#### 3.6.2 Stimulus/Response Sequences
+- **Order Tracking**:
+  - User navigates to order history
+  - User selects order to track
+  - System displays current status and tracking information
+  - User clicks tracking number
+  - System redirects to carrier tracking page
+
+- **Initiating Return**:
+  - User selects order for return
+  - System displays eligible items
+  - User selects items and reason for return
+  - System generates return authorization
+  - System sends return instructions
+
+- **Administrator Order Processing**:
+  - Admin views pending orders
+  - Admin updates order status
+  - System notifies customer of status change
+  - Admin processes payment and fulfillment
+  - System updates inventory levels
+
+#### 3.6.3 Functional Requirements
+
+**REQ-6.1**: The system shall display order status information using defined status categories.
+
+**REQ-6.2**: The system shall integrate with shipping carriers to retrieve tracking information.
+
+**REQ-6.3**: The system shall notify customers of order status changes via email.
+
+**REQ-6.4**: The system shall allow customers to initiate returns or exchanges within defined timeframes.
+
+**REQ-6.5**: The system shall generate return authorization and shipping labels for approved returns.
+
+**REQ-6.6**: The system shall allow administrators to process and update orders through an administrative interface.
+
+**REQ-6.7**: The system shall automatically update inventory after order fulfillment.
+
+**REQ-6.8**: The system shall support order cancellation before shipping.
+
+**REQ-6.9**: The system shall maintain a complete history of order status changes and actions.
+
+**REQ-6.10**: The system shall generate invoices and packing slips in printable formats.
+
+### 3.7 Product Reviews and Ratings
+
+#### 3.7.1 Description and Priority
+This feature allows customers to leave reviews and ratings for products they've purchased, and for other customers to view these reviews. This feature has a **Medium** priority as it enhances customer trust but is not critical for core functionality.
+
+#### 3.7.2 Stimulus/Response Sequences
+- **Submitting Review**:
+  - User navigates to product page
+  - User selects "Write a Review" option
+  - System verifies purchase history
+  - User completes review form with rating and comments
+  - System validates and posts review
+
+- **Viewing Reviews**:
+  - User views product page
+  - System displays average rating and review count
+  - User selects to view all reviews
+  - System displays paginated reviews
+  - User filters reviews by rating or helpfulness
+
+- **Moderating Reviews**:
+  - Admin receives notification of new review
+  - Admin reviews content for appropriateness
+  - Admin approves, edits, or rejects review
+  - System updates review status
+
+#### 3.7.3 Functional Requirements
+
+**REQ-7.1**: The system shall allow verified purchasers to submit product reviews with ratings (1-5 stars).
+
+**REQ-7.2**: The system shall display average ratings and review counts for each product.
+
+**REQ-7.3**: The system shall validate review submissions for required fields and inappropriate content.
+
+**REQ-7.4**: The system shall allow users to upload photos with their reviews.
+
+**REQ-7.5**: The system shall allow other users to mark reviews as helpful or unhelpful.
+
+**REQ-7.6**: The system shall support sorting reviews by date, rating, or helpfulness.
+
+**REQ-7.7**: The system shall notify administrators of new reviews for moderation.
+
+**REQ-7.8**: The system shall allow administrators to approve, edit, or remove reviews.
+
+**REQ-7.9**: The system shall send automatic review request emails after order delivery.
+
+**REQ-7.10**: The system shall display review summaries with positive and negative highlights.
+
+### 3.8 Wishlist Management
+
+#### 3.8.1 Description and Priority
+This feature allows users to save products to a wishlist for future consideration without adding them to the cart. This feature has a **Low** priority as it enhances user experience but is not critical for core shopping functionality.
+
+#### 3.8.2 Stimulus/Response Sequences
+- **Adding to Wishlist**:
+  - User views product
+  - User clicks "Add to Wishlist" button
+  - System adds item to user's wishlist
+  - System confirms addition with notification
+
+- **Managing Wishlist**:
+  - User navigates to wishlist page
+  - System displays saved items
+  - User removes items or moves them to cart
+  - System updates wishlist
+
+- **Sharing Wishlist**:
+  - User selects share option
+  - System generates shareable link
+  - User shares link via selected method
+  - Recipients view public wishlist
+
+#### 3.8.3 Functional Requirements
+
+**REQ-8.1**: The system shall allow registered users to add products to a persistent wishlist.
+
+**REQ-8.2**: The system shall allow users to create multiple named wishlists.
+
+**REQ-8.3**: The system shall display wishlist items with product details and current prices.
+
+**REQ-8.4**: The system shall allow users to move items from wishlist to shopping cart.
+
+**REQ-8.5**: The system shall allow users to remove items from the wishlist.
+
+**REQ-8.6**: The system shall notify users of price changes for wishlist items.
+
+**REQ-8.7**: The system shall allow users to share wishlists via email or link.
+
+**REQ-8.8**: The system shall allow users to set privacy settings for wishlists (public or private).
+
+**REQ-8.9**: The system shall maintain wishlist contents across sessions.
+
+**REQ-8.10**: The system shall indicate when wishlist items are out of stock or discontinued.
+
+### 3.9 Administrative Dashboard
+
+#### 3.9.1 Description and Priority
+This feature provides administrative users with tools to manage products, orders, customers, and system settings. This feature has a **High** priority as it's essential for business operations and site management.
+
+#### 3.9.2 Stimulus/Response Sequences
+- **Product Management**:
+  - Admin navigates to product management section
+  - System displays product listing
+  - Admin creates, edits, or deactivates products
+  - System updates product database
+
+- **Order Processing**:
+  - Admin views new orders
+  - Admin updates order status
+  - System sends notifications to customers
+  - Admin generates shipping labels
+  - System marks orders as fulfilled
+
+- **Analytics Review**:
+  - Admin navigates to analytics dashboard
+  - System displays key metrics and reports
+  - Admin selects specific date ranges
+  - System updates displayed data
+  - Admin exports reports as needed
+
+#### 3.9.3 Functional Requirements
+
+**REQ-9.1**: The system shall provide a secure administrative dashboard accessible only to authorized users.
+
+**REQ-9.2**: The system shall enable administrators to manage product listings including creation, editing, and deactivation.
+
+**REQ-9.3**: The system shall allow bulk product imports and updates via CSV files.
+
+**REQ-9.4**: The system shall provide order management capabilities including status updates, cancellations, and refunds.
+
+**REQ-9.5**: The system shall enable customer account management including viewing details and helping with account issues.
+
+**REQ-9.6**: The system shall provide inventory management features with stock level tracking and alerts.
+
+**REQ-9.7**: The system shall generate sales reports and analytics dashboards.
+
+**REQ-9.8**: The system shall allow management of promotions, discounts, and coupon codes.
+
+**REQ-9.9**: The system shall provide content management for homepage, categories, and static pages.
+
+**REQ-9.10**: The system shall log administrative actions for audit purposes.
